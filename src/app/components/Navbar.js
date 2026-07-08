@@ -8,7 +8,7 @@ const navItems = [
   { label: "Inicio", href: "/#inicio" },
   { label: "Servicios", href: "/#servicios" },
   { label: "Profesores", href: "/profesores" },
-  { label: "Galería", href: "/#galeria" },
+  { label: "Gimnasio", href: "/gimnasio" },
 ];
 
 export default function Navbar() {

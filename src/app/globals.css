@@ -140,3 +140,34 @@ body {
     animation: none;
   }
 }
+
+@keyframes gymSlideShow {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+
+  6% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  31% {
+    opacity: 0;
+    transform: scale(1.02);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+}
+
+.gym-hero-slide {
+  opacity: 0;
+  animation: gymSlideShow 16s ease-in-out infinite;
+}
