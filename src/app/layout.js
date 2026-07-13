@@ -2,7 +2,6 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
-import BackgroundMusic from "./components/BackgroundMusic";
 
 export const metadata = {
   title: "Imperio Fit | Gimnasio en Barrio Italia",
@@ -19,7 +18,6 @@ export default function RootLayout({ children }) {
   return (
     <html lang="es">
       <body>
-        <BackgroundMusic />
         <Navbar />
         {children}
         <Footer />
