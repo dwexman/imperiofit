@@ -6,6 +6,7 @@ const trainers = [
   {
     name: "Coach Kathy",
     initials: "K",
+    image: "/images/kathy.jpeg",
     role: "Musculación y calistenia",
     description:
       "Preparadora física, diplomada en nutrición y suplementación deportiva. Motivadora, exigente y con años de experiencia acompañando procesos de entrenamiento en musculación y calistenia.",
