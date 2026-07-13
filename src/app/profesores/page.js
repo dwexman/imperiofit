@@ -6,7 +6,6 @@ const trainers = [
   {
     name: "Coach Kathy",
     initials: "K",
-    image: "/images/kathy.JPG",
     role: "Musculación y calistenia",
     description:
       "Preparadora física, diplomada en nutrición y suplementación deportiva. Motivadora, exigente y con años de experiencia acompañando procesos de entrenamiento en musculación y calistenia.",
@@ -29,7 +28,6 @@ const trainers = [
   {
     name: "Coach Andrés",
     initials: "A",
-    image: "/images/andres.JPG",
     role: "Técnica, fuerza y biomecánica",
     description:
       "Preparador físico con estudios en biomecánica y entrenamiento de la fuerza. Su enfoque destaca la técnica, la precisión y la perfección del movimiento.",
@@ -41,6 +39,7 @@ const trainers = [
   {
     name: "Coach David",
     initials: "D",
+    image: "/images/david.jpeg",
     role: "Calistenia y personalizados 1 a 1",
     description:
       "Preparador físico y profesor de calistenia. Combina distintas disciplinas, destacando en entrenamiento funcional, deportes colectivos y musculación.",
@@ -143,12 +142,15 @@ export default function ProfesoresPage() {
                         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                         className="object-cover object-center transition duration-700 group-hover:scale-110"
                       />
+
                       <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/15 to-transparent" />
+
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,90,31,0.08),transparent_55%)]" />
                     </>
                   ) : (
                     <>
                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,90,31,0.22),transparent_48%)]" />
+
                       <div className="flex h-full items-center justify-center">
                         <span className="font-gothic relative bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-white bg-clip-text text-8xl uppercase text-transparent">
                           {trainer.initials}
