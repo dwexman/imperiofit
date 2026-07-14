@@ -18,6 +18,7 @@ const trainers = [
   {
     name: "Coach José",
     initials: "J",
+    image: "/images/jose.jpeg",
     role: "Musculación, halterofilia y calistenia",
     description:
       "Personal trainer, quiropráctico y diplomado en nutrición. Cuenta con una larga trayectoria en entrenamiento de musculación, halterofilia y calistenia.",
