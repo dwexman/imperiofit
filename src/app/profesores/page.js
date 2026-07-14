@@ -29,6 +29,7 @@ const trainers = [
   {
     name: "Coach Andrés",
     initials: "A",
+    image: "/images/andres.jpeg",
     role: "Técnica, fuerza y biomecánica",
     description:
       "Preparador físico con estudios en biomecánica y entrenamiento de la fuerza. Su enfoque destaca la técnica, la precisión y la perfección del movimiento.",
