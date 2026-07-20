@@ -4,6 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+const STORE_URL = "https://tienda.imperiofit.cl/";
+
 const navItems = [
   { label: "Inicio", href: "/#inicio" },
   { label: "Servicios", href: "/#servicios" },
@@ -11,7 +13,7 @@ const navItems = [
   { label: "Gimnasio", href: "/gimnasio" },
   {
     label: "Tienda",
-    href: "https://tienda.imperiofit.cl",
+    href: STORE_URL,
     external: true,
   },
 ];
@@ -70,7 +72,7 @@ export default function Navbar() {
         {/* Botón desktop */}
         <div className="hidden md:block">
           <a
-            href="https://wa.me/56973797211"
+            href={STORE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="font-gothic rounded-full bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] px-4 py-2 text-xs uppercase tracking-[0.18em] text-white shadow-[0_0_20px_rgba(255,90,31,0.35)] transition duration-300 hover:scale-105 md:px-5 md:text-sm"
@@ -137,7 +139,7 @@ export default function Navbar() {
               )}
 
               <a
-                href="https://wa.me/56973797211"
+                href={STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={closeMenu}

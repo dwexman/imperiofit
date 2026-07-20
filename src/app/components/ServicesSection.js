@@ -1,3 +1,5 @@
+const STORE_URL = "https://tienda.imperiofit.cl/";
+
 const plans = [
   {
     name: "Plan Básico",
@@ -12,7 +14,6 @@ const plans = [
       "Horario AM o PM",
       "Días elegibles semanalmente",
     ],
-    whatsapp: "Hola Imperio Fit, quiero más información sobre el Plan Básico.",
   },
   {
     name: "Plan Flexible",
@@ -27,8 +28,6 @@ const plans = [
       "Mayor flexibilidad",
       "Horario asignado diariamente por el coach",
     ],
-    whatsapp:
-      "Hola Imperio Fit, quiero más información sobre el Plan Flexible.",
     featured: true,
   },
   {
@@ -44,8 +43,6 @@ const plans = [
       "Horario fijo 18:00 hrs",
       "Días elegibles semanalmente",
     ],
-    whatsapp:
-      "Hola Imperio Fit, quiero más información sobre el Plan de Calistenia y Musculación.",
   },
   {
     name: "Plan Sábados",
@@ -60,14 +57,8 @@ const plans = [
       "Bloques 10:00 a 11:00",
       "Bloques 11:00 a 12:00",
     ],
-    whatsapp:
-      "Hola Imperio Fit, quiero más información sobre el Plan Sábados.",
   },
 ];
-
-function getWhatsappLink(message) {
-  return `https://wa.me/56973797211?text=${encodeURIComponent(message)}`;
-}
 
 export default function ServicesSection() {
   return (
@@ -85,8 +76,7 @@ export default function ServicesSection() {
           </p>
 
           <h2 className="font-gothic text-4xl uppercase leading-tight tracking-[0.08em] text-white md:text-6xl lg:text-7xl">
-            Tu ritmo.{" "}
-            <span className="text-zinc-400">Tu coach.</span>{" "}
+            Tu ritmo. <span className="text-zinc-400">Tu coach.</span>{" "}
             <span className="fire-title">Tu imperio.</span>
           </h2>
 
@@ -138,6 +128,7 @@ export default function ServicesSection() {
                   <span className="font-gothic bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] bg-clip-text text-5xl uppercase text-transparent">
                     {plan.price}
                   </span>
+
                   <span className="font-quicksilver pb-2 text-sm text-zinc-400">
                     / {plan.period}
                   </span>
@@ -158,12 +149,13 @@ export default function ServicesSection() {
               </ul>
 
               <a
-                href={getWhatsappLink(plan.whatsapp)}
+                href={STORE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Comprar ${plan.name}`}
                 className="font-gothic mt-auto rounded-full border border-white/15 bg-white/10 px-5 py-4 text-center text-xs uppercase tracking-[0.18em] text-white transition duration-300 hover:border-[#FF5A1F] hover:bg-gradient-to-r hover:from-[#E11919] hover:via-[#FF5A1F] hover:to-[#FF8A00]"
               >
-                Consultar plan
+                Comprar plan
               </a>
             </article>
           ))}

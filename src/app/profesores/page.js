@@ -215,7 +215,7 @@ export default function ProfesoresPage() {
                   rel="noopener noreferrer"
                   className="font-gothic mt-auto rounded-full border border-white/15 bg-white/10 px-5 py-4 text-center text-xs uppercase tracking-[0.18em] text-white transition duration-300 hover:border-[#FF5A1F] hover:bg-gradient-to-r hover:from-[#E11919] hover:via-[#FF5A1F] hover:to-[#FF8A00]"
                 >
-                  Consultar coach
+                  Entrenar con este coach
                 </a>
               </article>
             ))}

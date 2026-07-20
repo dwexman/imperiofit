@@ -277,7 +277,7 @@ export default function GimnasioPage() {
                     </p>
 
                     <a
-                      href="https://wa.me/56973797211?text=Hola%20Imperio%20Fit%2C%20quiero%20saber%20m%C3%A1s%20sobre%20los%20grupos%20reducidos%20y%20entrenamiento%20personalizado."
+                      href="https://tienda.imperiofit.cl/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="font-gothic mt-6 inline-flex rounded-full bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] px-7 py-4 text-sm uppercase tracking-[0.18em] text-white shadow-[0_0_35px_rgba(255,90,31,0.35)] transition duration-300 hover:scale-105"
@@ -327,11 +327,10 @@ export default function GimnasioPage() {
                         type="button"
                         aria-label={`Ver foto ${index + 1}`}
                         onClick={() => setActiveTrainingImage(index)}
-                        className={`h-2.5 rounded-full transition duration-300 ${
-                          activeTrainingImage === index
+                        className={`h-2.5 rounded-full transition duration-300 ${activeTrainingImage === index
                             ? "w-10 bg-gradient-to-r from-[#E11919] to-[#FF8A00]"
                             : "w-2.5 bg-white/25 hover:bg-white/50"
-                        }`}
+                          }`}
                       />
                     ))}
                   </div>
