@@ -3,6 +3,7 @@ import Script from "next/script";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
+import GoogleAnalyticsEvents from "./components/GoogleAnalyticsEvents";
 
 export const metadata = {
   title: "Imperio Fit | Gimnasio en Barrio Italia",
@@ -26,6 +27,8 @@ export default function RootLayout({ children }) {
         <Footer />
         <FloatingWhatsApp />
 
+        <GoogleAnalyticsEvents />
+
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-M8LW2RC57C"
           strategy="afterInteractive"
@@ -38,6 +41,8 @@ export default function RootLayout({ children }) {
             function gtag() {
               window.dataLayer.push(arguments);
             }
+
+            window.gtag = gtag;
 
             gtag('js', new Date());
             gtag('config', 'G-M8LW2RC57C');
