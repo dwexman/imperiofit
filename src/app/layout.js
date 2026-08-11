@@ -1,4 +1,5 @@
 import "./globals.css";
+import Script from "next/script";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import FloatingWhatsApp from "./components/FloatingWhatsApp";
@@ -19,9 +20,29 @@ export default function RootLayout({ children }) {
     <html lang="es">
       <body>
         <Navbar />
+
         {children}
+
         <Footer />
         <FloatingWhatsApp />
+
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-M8LW2RC57C"
+          strategy="afterInteractive"
+        />
+
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+              window.dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+            gtag('config', 'G-M8LW2RC57C');
+          `}
+        </Script>
       </body>
     </html>
   );
