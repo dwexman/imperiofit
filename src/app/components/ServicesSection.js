@@ -1,10 +1,13 @@
-const STORE_URL = "https://tienda.imperiofit.cl/";
+import Image from "next/image";
+import Link from "next/link";
 
 const plans = [
   {
     name: "Plan Básico",
     tag: "AM o PM",
     price: "$70.000",
+    firstPayment: "$90.000",
+    paymentId: "nuevo-basico",
     period: "mensual",
     description:
       "Plan con coach asignado según horario o bloque. Entrena 3 veces por semana de lunes a viernes, eligiendo tus días semanalmente.",
@@ -19,6 +22,8 @@ const plans = [
     name: "Plan Flexible",
     tag: "AM y PM",
     price: "$90.000",
+    firstPayment: "$110.000",
+    paymentId: "nuevo-flexible",
     period: "mensual",
     description:
       "Pensado para personas que varían sus horarios. Permite alternar entrenamientos en la mañana y en la tarde según disponibilidad.",
@@ -34,6 +39,8 @@ const plans = [
     name: "Calistenia + Musculación",
     tag: "18:00 hrs",
     price: "$80.000",
+    firstPayment: "$100.000",
+    paymentId: "nuevo-calistenia",
     period: "mensual",
     description:
       "Plan que combina entrenamiento de calistenia y musculación, ideal para quienes quieren fuerza, técnica y control corporal.",
@@ -48,6 +55,8 @@ const plans = [
     name: "Plan Sábados",
     tag: "Solo sábado",
     price: "$35.000",
+    firstPayment: "$55.000",
+    paymentId: "nuevo-sabados",
     period: "mensual",
     description:
       "Plan mensual para quienes prefieren entrenar los días sábados, con coach asignado y bloques reducidos.",
@@ -103,7 +112,7 @@ export default function ServicesSection() {
           {plans.map((plan) => (
             <article
               key={plan.name}
-              className={`group relative flex min-h-[560px] flex-col overflow-hidden rounded-[2rem] border p-6 transition duration-500 hover:-translate-y-2 ${
+              className={`group relative flex min-h-[590px] flex-col overflow-hidden rounded-[2rem] border p-6 transition duration-500 hover:-translate-y-2 ${
                 plan.featured
                   ? "border-[#FF5A1F]/70 bg-gradient-to-b from-[#2A0D07] via-[#111111] to-black shadow-[0_0_45px_rgba(255,90,31,0.22)]"
                   : "border-white/10 bg-white/[0.04] hover:border-[#FF5A1F]/60"
@@ -143,25 +152,61 @@ export default function ServicesSection() {
                 {plan.features.map((feature) => (
                   <li key={feature} className="flex gap-3">
                     <span className="mt-1 h-2 w-2 shrink-0 rounded-full bg-[#FF5A1F] shadow-[0_0_12px_rgba(255,90,31,0.8)]" />
+
                     <span>{feature}</span>
                   </li>
                 ))}
               </ul>
 
-              <a
-                href={STORE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label={`Comprar ${plan.name}`}
-                className="font-gothic mt-auto rounded-full border border-white/15 bg-white/10 px-5 py-4 text-center text-xs uppercase tracking-[0.18em] text-white transition duration-300 hover:border-[#FF5A1F] hover:bg-gradient-to-r hover:from-[#E11919] hover:via-[#FF5A1F] hover:to-[#FF8A00]"
+              <form
+                action="/api/getnet/create-session"
+                method="POST"
+                className="mt-auto"
               >
-                Comprar plan
-              </a>
+                <input
+                  type="hidden"
+                  name="planId"
+                  value={plan.paymentId}
+                />
+
+                <button
+                  type="submit"
+                  aria-label={`Comprar ${plan.name} con tarjeta`}
+                  className="font-gothic w-full rounded-full border border-white/15 bg-white/10 px-4 py-4 text-center text-[10px] uppercase leading-5 tracking-[0.12em] text-white transition duration-300 hover:border-[#FF5A1F] hover:bg-gradient-to-r hover:from-[#E11919] hover:via-[#FF5A1F] hover:to-[#FF8A00]"
+                >
+                  Tarjeta de crédito, débito o prepago
+                </button>
+
+                <p className="font-quicksilver mt-3 text-center text-xs text-zinc-400">
+                  Primer pago:{" "}
+                  <span className="font-semibold text-white">
+                    {plan.firstPayment}
+                  </span>{" "}
+                  con matrícula
+                </p>
+              </form>
             </article>
           ))}
         </div>
 
-        <div className="mt-10 rounded-[2rem] border border-[#FF5A1F]/30 bg-gradient-to-r from-[#E11919]/15 via-[#FF5A1F]/10 to-white/5 p-6 text-center">
+        {/* Información oficial de Web Checkout Getnet */}
+        <div className="mt-8 flex flex-col items-center rounded-[2rem] border border-white/10 bg-white/[0.04] px-6 py-7 text-center">
+          <Image
+            src="/images/getnet-web-checkout.svg"
+            alt="Web Checkout Getnet"
+            width={230}
+            height={90}
+            className="h-auto w-[180px] md:w-[220px]"
+          />
+
+          <p className="font-quicksilver mt-5 max-w-2xl text-sm leading-7 text-zinc-300">
+            Paga seguro todo lo que necesitas con Getnet utilizando tus tarjetas
+            de crédito, débito y prepago, de todos los emisores nacionales e
+            internacionales.
+          </p>
+        </div>
+
+        <div className="mt-8 rounded-[2rem] border border-[#FF5A1F]/30 bg-gradient-to-r from-[#E11919]/15 via-[#FF5A1F]/10 to-white/5 p-6 text-center">
           <p className="font-gothic text-lg uppercase tracking-[0.16em] text-white">
             Matrícula única:{" "}
             <span className="bg-gradient-to-r from-[#FF5A1F] to-white bg-clip-text text-transparent">
@@ -172,6 +217,24 @@ export default function ServicesSection() {
           <p className="font-quicksilver mt-2 text-sm text-zinc-400">
             Se cancela solo una vez al ingresar.
           </p>
+        </div>
+
+        <div className="mt-6 rounded-[2rem] border border-white/10 bg-white/[0.04] p-7 text-center">
+          <p className="font-gothic text-lg uppercase tracking-[0.16em] text-white">
+            ¿Ya eres alumno de Imperio Fit?
+          </p>
+
+          <p className="font-quicksilver mx-auto mt-3 max-w-xl text-sm leading-6 text-zinc-400">
+            Renueva tu mensualidad seleccionando tu plan actual, sin volver a
+            pagar la matrícula.
+          </p>
+
+          <Link
+            href="/renovar"
+            className="font-gothic mt-6 inline-flex rounded-full bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] px-7 py-4 text-xs uppercase tracking-[0.18em] text-white transition duration-300 hover:scale-[1.03]"
+          >
+            Renovar mi plan
+          </Link>
         </div>
       </div>
     </section>
