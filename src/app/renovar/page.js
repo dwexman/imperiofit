@@ -59,6 +59,38 @@ const renewalPlans = [
       "Sin pago de matrícula",
     ],
   },
+  {
+    name: "Personalizado 2 veces por semana",
+    tag: "1 a 1",
+    price: "$120.000",
+    paymentId: "renovacion-personalizado-2",
+    description:
+      "Entrenamiento personalizado 1 a 1 con flexibilidad horaria. Se trabaja en tu objetivo personal, con seguimiento, planificación y corrección de ejercicios.",
+    features: [
+      "2 veces por semana",
+      "Entrenamiento personalizado 1 a 1",
+      "Flexibilidad horaria",
+      "Planificación según tu objetivo",
+      "Seguimiento y corrección de ejercicios",
+      "Sin pago de matrícula",
+    ],
+  },
+  {
+    name: "Personalizado 3 veces por semana",
+    tag: "1 a 1",
+    price: "$180.000",
+    paymentId: "renovacion-personalizado-3",
+    description:
+      "Entrenamiento personalizado 1 a 1 con flexibilidad horaria. Se trabaja en tu objetivo personal, con seguimiento, planificación y corrección de ejercicios.",
+    features: [
+      "3 veces por semana",
+      "Entrenamiento personalizado 1 a 1",
+      "Flexibilidad horaria",
+      "Planificación según tu objetivo",
+      "Seguimiento y corrección de ejercicios",
+      "Sin pago de matrícula",
+    ],
+  },
 ];
 
 export default function RenewPage() {
@@ -92,10 +124,10 @@ export default function RenewPage() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {renewalPlans.map((plan) => (
             <article
-              key={plan.name}
+              key={plan.paymentId}
               className={`relative flex min-h-[470px] flex-col overflow-hidden rounded-[2rem] border p-6 transition duration-500 hover:-translate-y-2 ${
                 plan.featured
                   ? "border-[#FF5A1F]/70 bg-gradient-to-b from-[#2A0D07] via-[#111111] to-black shadow-[0_0_45px_rgba(255,90,31,0.22)]"
@@ -116,12 +148,12 @@ export default function RenewPage() {
                 {plan.name}
               </h2>
 
-              <div className="mt-5">
+              <div className="mt-5 flex flex-wrap items-end gap-2">
                 <span className="font-gothic bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] bg-clip-text text-5xl text-transparent">
                   {plan.price}
                 </span>
 
-                <span className="font-quicksilver ml-2 text-sm text-zinc-400">
+                <span className="font-quicksilver pb-2 text-sm text-zinc-400">
                   / mensual
                 </span>
               </div>
@@ -163,7 +195,6 @@ export default function RenewPage() {
           ))}
         </div>
 
-        {/* Información oficial de Web Checkout Getnet */}
         <div className="mt-10 flex flex-col items-center rounded-[2rem] border border-white/10 bg-white/[0.04] p-6 text-center">
           <div className="rounded-2xl bg-white px-6 py-4">
             <Image

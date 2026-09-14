@@ -67,6 +67,40 @@ const plans = [
       "Bloques 11:00 a 12:00",
     ],
   },
+  {
+    name: "Personalizado 2 veces por semana",
+    tag: "1 a 1",
+    price: "$120.000",
+    firstPayment: "$140.000",
+    paymentId: "nuevo-personalizado-2",
+    period: "mensual",
+    description:
+      "Entrenamiento personalizado 1 a 1 con flexibilidad horaria. Se trabaja en tu objetivo personal, con seguimiento, planificación y corrección de ejercicios.",
+    features: [
+      "2 veces por semana",
+      "Entrenamiento personalizado 1 a 1",
+      "Flexibilidad horaria",
+      "Planificación según tu objetivo",
+      "Seguimiento y corrección de ejercicios",
+    ],
+  },
+  {
+    name: "Personalizado 3 veces por semana",
+    tag: "1 a 1",
+    price: "$180.000",
+    firstPayment: "$200.000",
+    paymentId: "nuevo-personalizado-3",
+    period: "mensual",
+    description:
+      "Entrenamiento personalizado 1 a 1 con flexibilidad horaria. Se trabaja en tu objetivo personal, con seguimiento, planificación y corrección de ejercicios.",
+    features: [
+      "3 veces por semana",
+      "Entrenamiento personalizado 1 a 1",
+      "Flexibilidad horaria",
+      "Planificación según tu objetivo",
+      "Seguimiento y corrección de ejercicios",
+    ],
+  },
 ];
 
 export default function ServicesSection() {
@@ -97,7 +131,14 @@ export default function ServicesSection() {
           </p>
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            {["AM", "PM", "Flexible", "Calistenia", "Sábados"].map((item) => (
+            {[
+              "AM",
+              "PM",
+              "Flexible",
+              "Calistenia",
+              "Sábados",
+              "Personalizado 1 a 1",
+            ].map((item) => (
               <span
                 key={item}
                 className="font-gothic rounded-full border border-white/10 bg-white/[0.06] px-4 py-2 text-[10px] uppercase tracking-[0.2em] text-zinc-300"
@@ -108,10 +149,10 @@ export default function ServicesSection() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {plans.map((plan) => (
             <article
-              key={plan.name}
+              key={plan.paymentId}
               className={`group relative flex min-h-[590px] flex-col overflow-hidden rounded-[2rem] border p-6 transition duration-500 hover:-translate-y-2 ${
                 plan.featured
                   ? "border-[#FF5A1F]/70 bg-gradient-to-b from-[#2A0D07] via-[#111111] to-black shadow-[0_0_45px_rgba(255,90,31,0.22)]"
@@ -133,7 +174,7 @@ export default function ServicesSection() {
                   {plan.name}
                 </h3>
 
-                <div className="mt-6 flex items-end gap-2">
+                <div className="mt-6 flex flex-wrap items-end gap-2">
                   <span className="font-gothic bg-gradient-to-r from-[#E11919] via-[#FF5A1F] to-[#FF8A00] bg-clip-text text-5xl uppercase text-transparent">
                     {plan.price}
                   </span>
@@ -189,7 +230,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Información oficial de Web Checkout Getnet */}
         <div className="mt-8 flex flex-col items-center rounded-[2rem] border border-white/10 bg-white/[0.04] px-6 py-7 text-center">
           <Image
             src="/images/getnet-web-checkout.svg"

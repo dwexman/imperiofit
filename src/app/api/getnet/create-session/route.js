@@ -25,6 +25,16 @@ const PLANS = {
     amount: 55000,
     description: "Plan Sabados con matricula",
   },
+  "nuevo-personalizado-2": {
+    code: "NP2",
+    amount: 140000,
+    description: "Plan Personalizado 2 veces por semana con matricula",
+  },
+  "nuevo-personalizado-3": {
+    code: "NP3",
+    amount: 200000,
+    description: "Plan Personalizado 3 veces por semana con matricula",
+  },
 
   "renovacion-basico": {
     code: "RB",
@@ -45,6 +55,16 @@ const PLANS = {
     code: "RS",
     amount: 35000,
     description: "Renovacion Plan Sabados",
+  },
+  "renovacion-personalizado-2": {
+    code: "RP2",
+    amount: 120000,
+    description: "Renovacion Plan Personalizado 2 veces por semana",
+  },
+  "renovacion-personalizado-3": {
+    code: "RP3",
+    amount: 180000,
+    description: "Renovacion Plan Personalizado 3 veces por semana",
   },
 };
 
