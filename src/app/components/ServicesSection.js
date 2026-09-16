@@ -36,6 +36,21 @@ const plans = [
     featured: true,
   },
   {
+    name: "Plan VIP 6 AM",
+    tag: "06:00 hrs",
+    price: "$80.000",
+    firstPayment: "$100.000",
+    paymentId: "nuevo-vip-6am",
+    period: "mensual",
+    description:
+      "¡Para quienes disfrutan madrugar para entrenar! Comienza tu día entrenando con un grupo reducido de personas en todo el gimnasio, acompañado por la profesora Kathy.",
+    features: [
+      "Entrenamiento a las 06:00 AM",
+      "Grupo reducido en todo el gimnasio",
+      "Coach a cargo: profesora Kathy",
+    ],
+  },
+  {
     name: "Calistenia + Musculación",
     tag: "18:00 hrs",
     price: "$80.000",
@@ -135,6 +150,7 @@ export default function ServicesSection() {
               "AM",
               "PM",
               "Flexible",
+              "VIP 6 AM",
               "Calistenia",
               "Sábados",
               "Personalizado 1 a 1",

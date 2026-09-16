@@ -32,6 +32,20 @@ const renewalPlans = [
     featured: true,
   },
   {
+    name: "Plan VIP 6 AM",
+    tag: "06:00 hrs",
+    price: "$80.000",
+    paymentId: "renovacion-vip-6am",
+    description:
+      "Renueva tu Plan VIP 6 AM y sigue comenzando el día con un grupo reducido de personas en todo el gimnasio, acompañado por la profesora Kathy.",
+    features: [
+      "Entrenamiento a las 06:00 AM",
+      "Grupo reducido en todo el gimnasio",
+      "Coach a cargo: profesora Kathy",
+      "Sin pago de matrícula",
+    ],
+  },
+  {
     name: "Calistenia + Musculación",
     tag: "18:00 hrs",
     price: "$80.000",

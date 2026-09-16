@@ -15,6 +15,11 @@ const PLANS = {
     amount: 110000,
     description: "Plan Flexible con matricula",
   },
+  "nuevo-vip-6am": {
+    code: "NV6",
+    amount: 100000,
+    description: "Plan VIP 6 AM con matricula",
+  },
   "nuevo-calistenia": {
     code: "NC",
     amount: 100000,
@@ -45,6 +50,11 @@ const PLANS = {
     code: "RF",
     amount: 90000,
     description: "Renovacion Plan Flexible",
+  },
+  "renovacion-vip-6am": {
+    code: "RV6",
+    amount: 80000,
+    description: "Renovacion Plan VIP 6 AM",
   },
   "renovacion-calistenia": {
     code: "RC",
